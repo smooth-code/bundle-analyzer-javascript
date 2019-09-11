@@ -8,6 +8,7 @@ import * as drone from './drone'
 import * as gitlab from './gitlab'
 import * as heroku from './heroku'
 import * as jenkins from './jenkins'
+import * as netlify from './netlify'
 import * as semaphore from './semaphore'
 import * as shippable from './shippable'
 import * as snap from './snap'
@@ -16,15 +17,16 @@ import * as travis from './travis'
 import * as wercker from './wercker'
 
 export default [
+  netlify,
+  circle,
+  heroku,
   appveyor,
   azurePipelines,
   buildkite,
-  circle,
   cirrus,
   codeship,
   drone,
   gitlab,
-  heroku,
   jenkins,
   semaphore,
   shippable,
