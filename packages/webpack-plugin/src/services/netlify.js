@@ -7,9 +7,8 @@ export function config() {
     name: 'Netlify',
     service: 'netlify',
     commit: process.env.COMMIT_REF,
-    branch: process.env.BRANCH,
+    branch: process.env.HEAD,
     build_url: process.env.DEPLOY_URL,
-    root: process.env.WORKSPACE,
     pr: process.env.REVIEW_ID,
   }
 }
