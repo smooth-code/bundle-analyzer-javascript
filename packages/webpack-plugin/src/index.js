@@ -49,11 +49,9 @@ class BundleAnalyzer {
         async function sendBuild() {
           const assets = await sizeAssets(stats)
 
-          const { data: build } = await axios.post(`${apiUrl}/builds`, {
+          const { data: bundle } = await axios.post(`${apiUrl}/bundles`, {
             token,
-            branch: metadata.branch,
-            commit: metadata.commit,
-            providerMetadata: metadata,
+            bundler: 'webpack',
             stats: {
               assets,
               chunksNumber: stats.chunks.length,
@@ -64,7 +62,7 @@ class BundleAnalyzer {
 
           await axios.request({
             method: 'put',
-            url: build.webpackStatsPutUrl,
+            url: bundle.webpackStatsPutUrl,
             data: gzipSync(Buffer.from(JSON.stringify(stats))),
             headers: {
               'content-encoding': 'gzip',
@@ -72,8 +70,12 @@ class BundleAnalyzer {
             maxContentLength: 30 * 1024 * 1024,
           })
 
-          await axios.post(`${apiUrl}/builds/${build.id}/start`, {
+          await axios.post(`${apiUrl}/builds`, {
             token,
+            bundleId: bundle.id,
+            branch: metadata.branch,
+            commit: metadata.commit,
+            providerMetadata: metadata,
           })
         }
 
