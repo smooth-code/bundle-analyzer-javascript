@@ -21,7 +21,7 @@ module.exports = {
     path: __dirname + '/dist',
     filename: 'index_bundle.js',
   },
-  plugins: [new BundleAnalyzerPlugin()],
+  plugins: [new BundleAnalyzerPlugin({ token: 'Your repository token' })],
 }
 ```
 
@@ -31,18 +31,9 @@ module.exports = {
 
 You can specify the token using options or environment variable `BUNDLE_ANALYZER_TOKEN`.
 
-```js
-const BundleAnalyzerPlugin = require('@bundle-analyzer/webpack-plugin')
+### configFile
 
-module.exports = {
-  entry: 'index.js',
-  output: {
-    path: __dirname + '/dist',
-    filename: 'index_bundle.js',
-  },
-  plugins: [new BundleAnalyzerPlugin({ token: 'Your repository token' })],
-}
-```
+You can specify a custom configuration file.
 
 ## Complete documentation
 

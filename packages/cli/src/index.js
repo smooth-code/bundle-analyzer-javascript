@@ -7,10 +7,11 @@ program
   .version(pkg.version)
   .usage('[options] <stats>')
   .option('--token <repository-token>', 'specify the repository token')
+  .option('--config-file <file>', 'specify a custom config file')
 
 program.on('--help', () => {
   console.log(`
-  Example:
+  Examples:
     webpack --json | bundle-analyzer --token "your-repository-token"
     cat webpack-stats.json | bundle-analyzer --token "your-repository-token"
 `)
@@ -35,7 +36,11 @@ async function readStdin() {
 async function run() {
   const rawStats = await readStdin()
   const stats = JSON.parse(rawStats)
-  await uploadStats({ webpackStats: stats, token: program.token })
+  await uploadStats({
+    webpackStats: stats,
+    token: program.token,
+    configFile: program.configFile,
+  })
 }
 
 run().catch(error => {

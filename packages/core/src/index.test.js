@@ -89,6 +89,7 @@ describe('#uploadStats', () => {
           build_url: 'deploy-url',
           pr: 'review-id',
         },
+        config: null,
       })
       .reply(201)
 
