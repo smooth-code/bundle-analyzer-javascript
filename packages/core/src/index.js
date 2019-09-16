@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import zlib from 'zlib'
 import { promisify } from 'util'
 import path from 'path'
@@ -12,7 +13,9 @@ import { resolveConfig, getToken, getApiUrl } from './config'
 const gzip = promisify(zlib.gzip)
 
 async function sizeAssets(webpackStats, { fileSystem = fs } = {}) {
-  const readFile = promisify(fileSystem.readFile.bind(fileSystem))
+  const readFile = promisify(
+    fileSystem.readFile ? fileSystem.readFile.bind(fileSystem) : fs.readFile,
+  )
   return Promise.all(
     webpackStats.assets.map(async asset => {
       const fullPath = path.join(webpackStats.outputPath, asset.name)
@@ -85,6 +88,17 @@ export async function uploadStats({
       config,
     })
   } catch (error) {
+    if (
+      error.response &&
+      error.response.data &&
+      error.response.data.error &&
+      error.response.data.error.errors
+    ) {
+      console.error('Invalid Bundle Analyzer config:')
+      error.response.data.error.errors.forEach(message =>
+        console.error(message),
+      )
+    }
     throw new Error(getErrorMessage(error))
   }
 }
