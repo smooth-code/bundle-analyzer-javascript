@@ -24,6 +24,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "brotli-size": "^4.0.0",
+    "cosmiconfig": "^5.2.1",
     "gzip-size": "^5.1.1",
     "omit-deep": "^0.3.0"
   }

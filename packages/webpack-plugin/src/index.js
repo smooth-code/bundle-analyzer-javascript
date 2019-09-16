@@ -1,8 +1,9 @@
 import { uploadStats } from '@bundle-analyzer/core'
 
 class BundleAnalyzer {
-  constructor({ token } = {}) {
+  constructor({ token, configFile } = {}) {
     this.token = token
+    this.configFile = configFile
   }
 
   apply(compiler) {
@@ -10,7 +11,7 @@ class BundleAnalyzer {
       compiler.options.mode === 'production' || !compiler.options.mode
     if (!isProductionLikeMode) return
 
-    const { token } = this
+    const { token, configFile } = this
 
     compiler.hooks.afterEmit.tapAsync(
       '@bundle-analyzer/webpack-plugin',
@@ -23,6 +24,7 @@ class BundleAnalyzer {
         uploadStats({
           webpackStats: stats,
           token,
+          configFile,
           fileSystem: compiler.outputFileSystem,
         })
           .then(() => callback())

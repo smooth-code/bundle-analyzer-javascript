@@ -7,7 +7,7 @@ import gzipSize from 'gzip-size'
 import brotliSize from 'brotli-size'
 import omitDeep from 'omit-deep'
 import { detectProvider } from './provider'
-import { getToken, getApiUrl } from './config'
+import { resolveConfig, getToken, getApiUrl } from './config'
 
 const gzip = promisify(zlib.gzip)
 
@@ -39,6 +39,8 @@ function getErrorMessage(error) {
 }
 
 export async function uploadStats({
+  context = process.cwd(),
+  configFile,
   webpackStats,
   token: optionToken,
   fileSystem,
@@ -48,6 +50,7 @@ export async function uploadStats({
     const apiUrl = getApiUrl()
     const metadata = detectProvider()
     const stats = omitDeep(webpackStats, 'source')
+    const config = await resolveConfig(context, configFile)
     const assets = await sizeAssets(stats, { fileSystem })
 
     const { data: bundle } = await axios.post(`${apiUrl}/bundles`, {
@@ -79,6 +82,7 @@ export async function uploadStats({
       branch: metadata.branch,
       commit: metadata.commit,
       providerMetadata: metadata,
+      config,
     })
   } catch (error) {
     throw new Error(getErrorMessage(error))

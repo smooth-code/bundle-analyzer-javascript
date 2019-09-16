@@ -34,6 +34,14 @@ You can specify the token using options or environment variable `BUNDLE_ANALYZER
 
 Custom filesystem.
 
+### context
+
+Search the config file from this repository.
+
+### configFile
+
+Specify a custom config file.
+
 ## Complete documentation
 
 👉 [See full documentation](https://docs.bundle-analyzer.com/)
