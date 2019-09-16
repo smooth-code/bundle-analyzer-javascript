@@ -15,6 +15,9 @@
   "engines": {
     "node": ">=8"
   },
+  "bin": {
+    "bundle-analyzer": "bin/bundle-analyzer"
+  },
   "license": "MIT",
   "scripts": {
     "prebuild": "rm -rf lib/",
