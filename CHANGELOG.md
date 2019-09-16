@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/smooth-code/bundle-analyzer-javascript/compare/v0.3.0...v0.3.1) (2019-09-16)
+
+
+### Bug Fixes
+
+* add missing bin ([b2ae52b](https://github.com/smooth-code/bundle-analyzer-javascript/commit/b2ae52b))
+* fix fs issue & improve error messages ([bb8e58b](https://github.com/smooth-code/bundle-analyzer-javascript/commit/bb8e58b))
+
+
+
+
+
 # [0.3.0](https://github.com/smooth-code/bundle-analyzer-javascript/compare/v0.2.1...v0.3.0) (2019-09-16)
 
 
