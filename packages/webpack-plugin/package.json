@@ -1,7 +1,7 @@
 {
   "name": "@bundle-analyzer/webpack-plugin",
   "description": "Bundle Analyzer webpack plugin.",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "lib/index.js",
   "repository": "https://github.com/smooth-code/bundle-analyzer-javascript/tree/master/packages/webpack-plugin",
   "author": "Greg Bergé <berge.greg@gmail.com>",
@@ -24,6 +24,6 @@
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
-    "@bundle-analyzer/core": "^0.2.1"
+    "@bundle-analyzer/core": "^0.3.0"
   }
 }
