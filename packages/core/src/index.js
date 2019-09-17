@@ -23,7 +23,7 @@ async function sizeAssets(webpackStats, { fileSystem = fs } = {}) {
       return {
         ...asset,
         gzipSize: await gzipSize(buffer),
-        brotliSize: await brotliSize(buffer),
+        brotliSize: brotliSize.sync(buffer),
       }
     }),
   )
