@@ -8,6 +8,7 @@ import * as drone from './drone'
 import * as gitlab from './gitlab'
 import * as heroku from './heroku'
 import * as jenkins from './jenkins'
+import * as now from './now'
 import * as netlify from './netlify'
 import * as semaphore from './semaphore'
 import * as shippable from './shippable'
@@ -18,6 +19,7 @@ import * as wercker from './wercker'
 
 export default [
   netlify,
+  now,
   circle,
   heroku,
   appveyor,
