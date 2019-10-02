@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/smooth-code/bundle-analyzer-javascript/tree/master/packages/core/compare/v0.4.0...v0.5.0) (2019-10-02)
+
+
+### Features
+
+* add support for now ([6fda221](https://github.com/smooth-code/bundle-analyzer-javascript/tree/master/packages/core/commit/6fda221)), closes [#15](https://github.com/smooth-code/bundle-analyzer-javascript/tree/master/packages/core/issues/15)
+
+
+
+
+
 # [0.4.0](https://github.com/smooth-code/bundle-analyzer-javascript/tree/master/packages/core/compare/v0.3.1...v0.4.0) (2019-09-17)
 
 **Note:** Version bump only for package @bundle-analyzer/core
