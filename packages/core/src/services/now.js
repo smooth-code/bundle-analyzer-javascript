@@ -1,5 +1,5 @@
 export function detect() {
-  return !!process.env.NOW_GITHUB_DEPLOYMENT
+  return !!process.env.NOW_GITHUB_COMMIT_SHA && !!process.env.NOW_GITHUB_COMMIT_REF
 }
 
 export function config() {
