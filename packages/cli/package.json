@@ -1,7 +1,7 @@
 {
   "name": "@bundle-analyzer/cli",
   "description": "Bundle Analyzer CLI.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "lib/index.js",
   "repository": "https://github.com/smooth-code/bundle-analyzer-javascript/tree/master/packages/cli",
   "author": "Greg Bergé <berge.greg@gmail.com>",
@@ -25,7 +25,7 @@
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
-    "@bundle-analyzer/core": "^0.5.0",
+    "@bundle-analyzer/core": "^0.5.1",
     "commander": "^3.0.1"
   },
   "devDependencies": {

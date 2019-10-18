@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/smooth-code/bundle-analyzer-javascript/compare/v0.5.0...v0.5.1) (2019-10-18)
+
+
+### Bug Fixes
+
+* updating now detect ([#4](https://github.com/smooth-code/bundle-analyzer-javascript/issues/4)) ([4ff5223](https://github.com/smooth-code/bundle-analyzer-javascript/commit/4ff5223))
+
+
+
+
+
 # [0.5.0](https://github.com/smooth-code/bundle-analyzer-javascript/compare/v0.4.0...v0.5.0) (2019-10-02)
 
 
