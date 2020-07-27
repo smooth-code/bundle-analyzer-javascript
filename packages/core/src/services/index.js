@@ -5,6 +5,7 @@ import * as circle from './circle'
 import * as cirrus from './cirrus'
 import * as codeship from './codeship'
 import * as drone from './drone'
+import * as github from './github'
 import * as gitlab from './gitlab'
 import * as heroku from './heroku'
 import * as jenkins from './jenkins'
@@ -28,6 +29,7 @@ export default [
   cirrus,
   codeship,
   drone,
+  github,
   gitlab,
   jenkins,
   semaphore,
