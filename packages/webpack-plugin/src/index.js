@@ -29,7 +29,12 @@ class BundleAnalyzer {
         })
           .then(() => callback())
           .catch(error => {
-            callback(new Error(`Bundle Analyzer - ${error.message}`))
+            // eslint-disable-next-line no-console
+            console.error(`Bundle Analyzer - ${error.message}`)
+            // eslint-disable-next-line no-console
+            console.info(`Bundle Analyzer - Stats failed to upload. Continuing build...`)
+
+            callback()
           })
       },
     )
